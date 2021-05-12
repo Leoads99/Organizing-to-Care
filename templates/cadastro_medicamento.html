@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cadastro de Medicamento</title>
+</head>
+
+<body>
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+
+    <form action="/cadastro_medicamento" , method="POST">
+        Nome do Medicamento:<br />
+        <input type="text" id="nome_medicamento" name="nome_medicamento" autocomplete="off" /><br />
+        Data de Validade:<br />
+        <input type="text" id="data_validade" name="data_validade" autocomplete="off" /><br />
+        Quantidade:<br />
+        <input type="quantidade" id="quantidade" name="quantidade" autocomplete="off" /><br />
+        Peso:<br />
+        <input type="peso" id="peso" name="peso" autocomplete="off" /><br />
+        <button type="submit">Cadastrar</button>
+    </form>
+    <a href="/">Voltar</a>
+</body>
+
+</html>

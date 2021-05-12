@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login OK!</title>
+</head>
+
+<body>
+    <div>
+        <h1>Seja bem-vindo, {{nome}}.</h1>
+        <a href="/">Voltar</a>
+        <br>
+        <h2>MEDICAMENTOS CADASTRADOS</h2>
+        <br>
+        <table border="0" width="70%" align="center">
+            <thead>
+                <tr>
+                    <th align="center">ID</th>
+                    <th>NOME DO MEDICAMENTO</th>
+                    <th>DATA DE VALIDADE</th>
+                    <th>QUANTIDADE</th>
+                    <th>PESO</th>
+           </thead> 
+           <tbody>
+                {% for x in medicamento %}
+                <tr align="center">
+                    <td>{{x.id}}</td>
+                    <td>{{x.nome_medicamento}}</td>
+                    <td>{{x.data_validade}}</td>
+                    <td>{{x.quantidade}}</td>
+                    <td>{{x.peso}}</td>
+                    <td>
+                    </td>    
+                </tr>
+        {% endfor %}
+        </table>  
+    </div>
+</body>
+
+</html>

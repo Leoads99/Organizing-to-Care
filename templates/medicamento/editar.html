@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container pt-5">
+
+    <div class="pb-2">
+        <a href="{{ url_for('medicamentos') }}">Voltar</a>
+    </div>
+
+    <form action="{{url_for('medicamentos_update', id=medicamento.id)}}" method="POST">
+        <input type="hidden" name="id" value="{{ medicamento.id }}">
+        <div class="form-group">
+            <label for="nome_medicamento">Nome do Medicamento</label>
+            <input type="text" class="form-control" id="nome_medicamento" name="nome_medicamento" value="{{medicamento.nome_medicamento}}">
+        </div>
+        <div class="form-group">
+            <label for="data_validade">Data de validade</label>
+            <input type="number" class="form-control" id="data_validade" name="data_validade" value="{{medicamento.data_validade}}">
+        </div>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </form>
+
+</div>
+
+{% endblock %}

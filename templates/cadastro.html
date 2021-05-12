@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cadastro</title>
+</head>
+
+<body>
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+
+    <form action="/cadastro" , method="POST">
+        Login:<br />
+        <input type="text" id="login" name="login" autocomplete="off" /><br />
+        Senha:<br />
+        <input type="password" id="senha" name="senha" autocomplete="off" /><br />
+        Confirmar Senha:<br />
+        <input type="password" id="confirmar_senha" name="confirmar_senha" autocomplete="off" /><br />
+        Nome:<br />
+        <input type="text" id="nome" name="nome" autocomplete="off" /><br />
+        CPF:<br />
+        <input type="text" id="cpf" name="cpf" autocomplete="off" /><br />
+        E-mail:<br />
+        <input type="mail" id="email" name="email" autocomplete="off" /><br />
+        Telefone:<br />
+        <input type="number" id="telefone" name="telefone" autocomplete="off" /><br />
+        CEP:<br />
+        <input type="text" id="cep" name="cep" autocomplete="off" /><br />
+        <button type="submit">Cadastrar</button>
+    </form>
+    <a href="/">Voltar</a>
+</body>
+
+</html>

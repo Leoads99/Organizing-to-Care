@@ -1,0 +1,71 @@
+<html>
+
+<head>
+    <title>Bem vindo!</title>
+</head>
+
+<body>
+    <a href="/login">Login</a><br>
+    <a href="/cadastro">Cadastro</a><br>
+    <a href="/cadastro_medicamento">Cadastro de Medicamentos</a><br>
+    <br>
+    <table border="0" width="70%" align="center">
+        <thead>
+            <tr align="center">
+                <th>ID</th>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th>EMAIL</th>
+                <th>TELEFONE</th>
+                <th>CEP</th>
+                <th>LOGRADOURO</th>
+                <th>USERNAME</th>
+                <th>SENHA</th>
+       </thead> 
+       <tbody>
+            {% for c in usuario %}
+            <tr align="center">
+                <td align="">{{c.id}}</td>
+                <td>{{c.nome}}</td>
+                <td>{{c.cpf}}</td>
+                <td>{{c.email}}</td>
+                <td>{{c.telefone}}</td>
+                <td>{{c.cep}}</td>
+                <td>{{c.logradouro}}</td>
+                <td>{{c.username}}</td>
+                <td>{{c.senha}}</td>
+                <td>
+                <!--<a href="/edit/{{c.id}}">Editar</a>
+                    <a href="/delete/{{c.id}}">Apagar</a>-->
+                </td>    
+            </tr>
+    {% endfor %}
+    </table>
+    <br>
+    <table border="0" width="70%" align="center">
+        <thead>
+            <tr>
+                <th align="center">ID</th>
+                <th>NOME DO MEDICAMENTO</th>
+                <th>DATA DE VALIDADE</th>
+                <th>QUANTIDADE</th>
+                <th>PESO</th>
+       </thead> 
+       <tbody>
+            {% for x in medicamento %}
+            <tr align="center">
+                <td>{{x.id}}</td>
+                <td>{{x.nome_medicamento}}</td>
+                <td>{{x.data_validade}}</td>
+                <td>{{x.quantidade}}</td>
+                <td>{{x.peso}}</td>
+                <td>
+                </td>    
+            </tr>
+    {% endfor %}
+    </table>  
+
+
+</body>
+
+</html>
